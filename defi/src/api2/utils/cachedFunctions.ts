@@ -61,7 +61,7 @@ export async function getProtocolAllTvlData(protocol: Protocol, useOnlyCachedDat
       protocolCache.tokensInUsd = mergeSortAndRemoveDups(protocolCache.tokensInUsd, historicalUsdTokenTvl)
       protocolCache.tokens = mergeSortAndRemoveDups(protocolCache.tokens, historicalTokenTvl)
     }
-    await writeToPGCache(cacheKey, protocolCache)
+    writeToPGCache(cacheKey, protocolCache)
   }
 
   return [
